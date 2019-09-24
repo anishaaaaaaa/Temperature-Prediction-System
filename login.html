@@ -1,0 +1,128 @@
+<html>
+	<head>
+		<style>
+			body{
+				/*height: 100%*/
+				margin: 0;
+				padding: 0;
+				/*background-color: red;*/
+				/*font-family: sans-serif;*/
+			}
+			.container{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: url(cloudbg.jpg);
+				background-size: cover;
+			}
+			.loginbox{
+				width: 320px;
+				height: 420px;
+				background: #000;
+				color: #fff;
+				opacity: 0.75;
+				top: 50%;
+				left: 50%;
+				position: absolute;
+				transform: translate(-50%, -50%);
+				box-sizing: border-box;
+				padding: 70px 30px;
+			}
+			.avatar{
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				position: absolute;
+				top: -50px;
+				left: calc(50% - 50px);
+			}
+			.loginTitle{
+				margin: 0;
+				padding: 0 0 20px;
+			}
+			.loginParam{
+				margin: 0;
+				padding: 0;
+				font-weight: bold;
+			}
+			.loginInput{
+				width: 100%;
+				/*height: 30px;*/
+				margin: 5px 0px 15px 0px;
+			}
+			.loginbox input[type="text"], input[type="password"]{
+				border: none;
+				border-bottom: 1px solid #fff;
+				outline: none;
+				background: transparent;
+				height: 40px;
+				color: #fff;
+				font-size: 16px; 
+			}
+			.loginbox input[type="submit"]{
+				border: none;
+				outline: none;
+				height: 40px;
+				background: #171D33;
+				color: #fff;
+				font-size: 18px;
+				border-radius: 20px
+			}
+			.loginbox input[type="submit"]:hover{
+				cursor: pointer;
+				background: #ffc107;
+				color: #000;
+			}
+			.loginLinks{
+				text-decoration: none;
+				font-size: 12px;
+				line-height: 20px;
+				color: darkgrey;
+			}
+			.loginLinks:hover{
+				color: #ffc107;
+			}
+			.clouds{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: url(cloud.png);
+				animation: animate 10s linear infinite;
+			}
+			@keyframes animate{
+				0%{
+					background-position: 0px; 
+				}
+				100%{
+					background-position: 540px
+				}
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="clouds"></div>
+			<div class="loginbox">
+			<img src="avatar.png" alt="" class="avatar">
+			<h1 class="loginTitle">Login</h1>
+			<form action="">
+				<p class="loginParam">Username</p>
+				<input type="text" name="" placeholder="Enter Username" class="loginInput">
+				<p class="loginParam">Password</p>
+				<input type="password" name="" placeholder="Enter Password" class="loginInput">
+				<input type="submit" name="" value="Login" class="loginInput">
+				<a href="#" class="loginLinks">Lost you password?</a>
+				<a href="#" class="loginLinks">Don't have an account</a>
+			</form>
+						
+		</div>
+		
+		</div>
+		
+	</body>
+</html>
