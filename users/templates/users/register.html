@@ -1,18 +1,156 @@
-{% load crispy_forms_tags %}
-<div class="content-section">
-    <form action="" method="POST">
-        {% csrf_token %}
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Join Today</legend>
-            {{ form|crispy }}
-        </fieldset>
-        <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Sign Up</button>
-        </div>
-    </form>
-    <div class="border-top pt-3">
-        <small class="text-muted">Already Have An Account?
-            <a href="{% url 'login' %}" class="ml-2">Sign In</a>
-        </small>
-    </div>
-</div>
+<!--{% load crispy_forms_tags %}-->
+<!--<div class="content-section">-->
+<!--    <form action="" method="POST">-->
+<!--        {% csrf_token %}-->
+<!--        <fieldset class="form-group">-->
+<!--            <legend class="border-bottom mb-4">Join Today</legend>-->
+<!--            {{ form|crispy }}-->
+<!--        </fieldset>-->
+<!--        <div class="form-group">-->
+<!--            <button class="btn btn-outline-info" type="submit">Sign Up</button>-->
+<!--        </div>-->
+<!--    </form>-->
+<!--    <div class="border-top pt-3">-->
+<!--        <small class="text-muted">Already Have An Account?-->
+<!--            <a href="{% url 'login' %}" class="ml-2">Sign In</a>-->
+<!--        </small>-->
+<!--    </div>-->
+<!--</div>-->
+{% load static %}
+<html>
+	<head>
+		<style>
+			body{
+				/*height: 100%*/
+				margin: 0;
+				padding: 0;
+				/*background-color: red;*/
+				/*font-family: sans-serif;*/
+			}
+			.container{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: url({% static "cloudbg.jpg" %});
+				background-size: cover;
+			}
+			.loginbox{
+				width: 320px;
+				height: 525px;
+				background: #000;
+				color: #fff;
+				opacity: 0.75;
+				top: 50%;
+				left: 50%;
+				position: absolute;
+				transform: translate(-50%, -50%);
+				box-sizing: border-box;
+				padding: 70px 30px;
+			}
+			.avatar{
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				position: absolute;
+				top: -50px;
+				left: calc(50% - 50px);
+			}
+			.loginTitle{
+				margin: 0;
+				padding: 0 0 20px;
+			}
+			.loginParam{
+				margin: 0;
+				padding: 0;
+				font-weight: bold;
+			}
+			.loginInput, .loginInputbtn{
+				width: 100%;
+				/*height: 30px;*/
+				margin: 5px 0px 15px 0px;
+			}
+<!--
+			.loginInput{
+				border: none;
+				border-bottom: 1px solid #fff;
+				outline: none;
+				background: transparent;
+				height: 40px;
+				color: #fff;
+				font-size: 16px;
+			}
+			.loginbox input[type="submit"]{
+				border: none;
+				outline: none;
+				height: 40px;
+				background: #171D33;
+				color: #fff;
+				font-size: 18px;
+				border-radius: 20px
+			}
+			.loginbox input[type="submit"]:hover{
+				cursor: pointer;
+				background: #ffc107;
+				color: #000;
+			}
+			.loginLinks{
+				text-decoration: none;
+				font-size: 12px;
+				line-height: 20px;
+				color: darkgrey;
+			}
+			.loginLinks:hover{
+				color: #ffc107;
+			}
+			.clouds{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: url({% static "cloud.png" %});
+				animation: animate 10s linear infinite;
+			}
+			@keyframes animate{
+				0%{
+					background-position: 0px;
+				}
+				100%{
+					background-position: 540px
+				}
+
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="clouds"></div>
+			<div class="loginbox">
+			<img src="{% static 'avatar.png' %}" alt="" class="avatar">
+			<h1 class="loginTitle">Register</h1>
+			<form action="" method="POST">
+                {% csrf_token %}
+				<p class="loginParam">Username</p>
+				<input type="text" name="" placeholder="Enter Username" class="loginInput">
+                <p class="loginParam">Email</p>
+				<input type="email" name="" placeholder="Enter Email" class="loginInput">
+				<p class="loginParam">Password</p>
+				<input type="password" name="" placeholder="Enter Password" class="loginInput">
+                <p class="loginParam">Re-type Password</p>
+				<input type="password" name="" placeholder="Re-enter Password" class="loginInput">
+				<input type="submit" name="" value="Register" class="loginInputbtn">
+<!--				<a href="{% url 'register' %}" class="loginLinks">Lost you password?</a>-->
+				<a href="#" class="loginLinks">Already Have an Account</a>
+			</form>
+
+		</div>
+
+		</div>
+
+	</body>
+</html>
+
+Palak Davda
+Sardar Patel Institute of Technology,

@@ -2,10 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f499aa0f-5994-49df-ab58-2b8fdf14d10f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/static/avatar.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TemperaturePrediction/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/TemperaturePrediction/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TemperaturePrediction/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/TemperaturePrediction/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/cloud.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloudbg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/cloudbg.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/templates/users/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/templates/users/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -36,11 +44,16 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/currentTemp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Dell\Documents\TemperaturePrediction\static" />
+      <recent name="C:\Users\Dell\Documents\TemperaturePrediction\users\templates\users" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dell\Documents\TemperaturePrediction\static" />
       <recent name="C:\Users\Dell\Documents\TemperaturePrediction\currentTemp" />
       <recent name="C:\Users\Dell\Documents\TemperaturePrediction\historicalTemp" />
     </key>
