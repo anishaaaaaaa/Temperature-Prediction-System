@@ -114,12 +114,13 @@
 			<form action="" method="POST">
                 {% csrf_token %}
 				<p class="loginParam">Username</p>
-				<input type="text" name="" placeholder="Enter Username" class="loginInput">
+				<input type="text" name="username" placeholder="Enter Username" class="loginInput" required>
 				<p class="loginParam">Password</p>
-				<input type="password" name="" placeholder="Enter Password" class="loginInput">
+				<input type="password" name="password" placeholder="Enter Password" class="loginInput" required>
 				<input type="submit" name="" value="Login" class="loginInput">
-				<a href="{% url 'register' %}" class="loginLinks">Lost you password?</a>
-				<a href="#" class="loginLinks">Don't have an account</a>
+				<p style="color: red">{{error}}</p>
+				<!-- <a href="{% url 'register' %}" class="loginLinks">Lost you password?</a> -->
+				<a href="{% url 'register' %}" class="loginLinks">Don't have an account</a>
 			</form>
 
 		</div>
@@ -128,6 +129,3 @@
 
 	</body>
 </html>
-
-Palak Davda
-Sardar Patel Institute of Technology,

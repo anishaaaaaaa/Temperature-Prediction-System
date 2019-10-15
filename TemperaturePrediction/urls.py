@@ -22,9 +22,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('historicalTemp/', include('historicalTemp.urls')),
     path('currentTemp/', include('currentTemp.urls')),
-    path('register/', user_views.register, name='register'),
-    path('profile/',user_views.profile, name="profile"),
-    path('login/', user_views.login, name="login")
+    path('register/', user_views.register_user, name='register'),
+    path('profile/',user_views.profile_user, name="profile"),
+    path('login/', user_views.login_user, name="login")
 
 ]
 if settings.DEBUG:

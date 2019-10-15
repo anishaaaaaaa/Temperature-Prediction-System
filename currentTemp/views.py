@@ -2,7 +2,9 @@ import requests
 from django.shortcuts import render
 from .models import City
 from .forms import CityForm
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url="/login/")
 def index(request):
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=9c3f1af00ab7b14d1b7c0e29d374b63f'
 
