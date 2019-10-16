@@ -1,0 +1,20 @@
+{% extends 'comment_app/base.html'%}
+
+{% block description %}This is category{% endblock %}
+{% block title %}{{category.name}}{% endblock %}
+
+{% block content %}
+<div class="row">
+	<div class="col-md-8">
+	<div class="page-header">
+		<h1>Our Latest Post in {{category.name}}</h1>
+	</div>		
+	{% for posts in post %}
+		<h2><a href="{{posts.get_absolute_url}}">{{posts.title}}</a></h2>
+		<small>Written by - {{posts.author}} on {{posts.published}}</small> 
+		<hr>
+		{{post.content|truncatewords:40|linebreaks}}
+	{% endfor %}
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'comment_app/base.html'%}
+{% load static %}
+
+{% block description %}{{post.seo_description}}{% endblock %}
+{% block title %}{{post.seo_title}}{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	body,html{
+		height: 100%;
+		margin:0;
+	}
+	.ab{
+		background-image: url({% static "weather1.jpg" %});
+		height: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+
+	}
+</style>
+<body class="ab">
+<div class="row">
+	<div class="col-md-8">
+		<div class="page-header">
+		<h1>{{post.title}}</h1>
+		</div>	
+		<small>Written by - {{post.author}} on {{post.published}} in <a href="{{post.category.get_absolute_url}}">{{post.category}}</a></small> 
+		{{post.content|linebreaks}}
+		<div class="page-header">
+		<h2>Leave a Comment<small style="color: black"> &nbsp;&nbsp;&nbsp;&nbsp; Total number of comments {{post.comments.count}}</small></h1>
+		</div>
+		<p class="text-center"><button type="button" class="btn-btn-default"><a href="{% url 'comment_app:add_comment' slug=post.slug %}">Leave A Comment</a></button></p>
+		{% for comment in post.comments.all %}
+		<div class="panel panel-default">
+			<div class="panel-heading">{{ comment.user}} commented on {{ comment.created}}</div>
+			
+			<div class="panel-body">{{ comment.body}}</div>
+	
+		</div>
+		{% empty %}
+		<p>There is no comments</p>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
+</body>
+</html>

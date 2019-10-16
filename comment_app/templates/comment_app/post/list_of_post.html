@@ -1,0 +1,47 @@
+{% extends 'comment_app/base.html'%}
+{% load static %}
+
+
+{% block description %}This is description{% endblock %}
+
+{% block title %}List of blogs post{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	body,html{
+		height: 100%;
+		margin:0;
+	}
+	.abc{
+		background-image: url({% static "weather1.jpg" %});
+		height: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+
+	}
+	
+</style>
+</head>
+<body class="abc" >
+<div class="row">
+	<div class="col-md-8">
+	<div  class="page-header" >
+		<h1>{{post.title}}</h1>
+	</div>		
+	{% for posts in post %}
+		<h2 ><a href="{{posts.get_absolute_url}}" style="color: black;">{{posts.title}}</a></h2>
+		<small>Written by - {{posts.author}} on {{posts.published}} in <a href="{{posts.category.get_absolute_url}}">{{posts.category}}</a></small> 
+		<hr>
+		{{post.content|truncatewords:40|linebreaks}}
+	{% endfor %}
+	</div>
+</div>
+{% endblock %}
+
+</body>
+</html>
