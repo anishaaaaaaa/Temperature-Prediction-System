@@ -7,16 +7,24 @@
 {% block content %}
 
 <div class="container text-center">
+    <br><br>
     <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand text-center" href="#">Weather History</a>
+        <a class="navbar-brand text-center" href="#">HISTORICAL TEMPERATURE</a>
     </nav>
 
 
     <div class="card" style="width: 100%;margin-top: 15px">
 
         <div class="card-body">
-            <h5 class="card-title">Topographical 3D Surface Plot</h5>
-          {{3dplot|safe}}
+            <h5 class="card-title">DATA VISUALIZATION</h5>
+        </div>
+    </div>
+    <div class="card" style="width: 100%;margin-top: 15px">
+        <div class="card-body">
+            <p><b>City: {{ city }}<br>
+                Start Date: {{ startdate }}<br>
+                End Date: {{ enddate }}</b>
+            </p>
         </div>
     </div>
 </div>
