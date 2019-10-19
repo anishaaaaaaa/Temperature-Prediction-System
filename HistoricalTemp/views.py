@@ -16,7 +16,7 @@ def new_page(request):
     loc = request.GET['city']
     startdate = request.GET['sdate']
     enddate = request.GET['edate']
-    url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/weatherdata/history?&dateTimeFormat=yyyy-MM-dd'T'HH%3Amm%3Ass&startDateTime={x}T00%3A00%3A00&endDateTime={y}T00%3A00%3A00&dayStartTime=0%3A0%3A00&dayEndTime=0%3A0%3A00&aggregateHours=24&collectStationContribution=false&maxDistance=80467&maxStations=3&unitGroup=us&locations={z}&sessionId=25f8ce2a980e0d597c75006b57569b6f".format(
+    url = "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/weatherdata/history?&dateTimeFormat=yyyy-MM-dd'T'HH%3Amm%3Ass&startDateTime={x}T00%3A00%3A00&endDateTime={y}T00%3A00%3A00&dayStartTime=0%3A0%3A00&dayEndTime=0%3A0%3A00&aggregateHours=24&collectStationContribution=false&maxDistance=80467&maxStations=3&unitGroup=us&locations={z}&sessionId=8ec91549af2a00ee32c5e2ee634036d9".format(
         x=startdate, y=enddate, z=loc)
     urlData = requests.get(url).content
     rawData = pd.read_csv(io.StringIO(urlData.decode('utf-8')))
