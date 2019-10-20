@@ -6,12 +6,14 @@ import io
 from pandas import read_csv
 from matplotlib import pyplot as pp
 
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url="/login/")
 # Create your views here.
 def history(request):
     return render(request, 'index.html')
 
-
+@login_required(login_url="/login/")
 def new_page(request):
     loc = request.GET['city']
     startdate = request.GET['sdate']
