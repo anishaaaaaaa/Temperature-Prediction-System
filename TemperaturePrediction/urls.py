@@ -21,9 +21,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('historicalTemp/', include('HistoricalTemp.urls')),
+    path('historicalTemp/', include('HistoricalTemp.urls')),
     path('currentTemp/', include('currentTemp.urls')),
-     path('predictedTemp/', include('PredictedTemp.urls')),
     path('register/', user_views.register_user, name='register'),
     path('profile/',user_views.profile_user, name="profile"),
     path('login/', user_views.login_user, name="login"),

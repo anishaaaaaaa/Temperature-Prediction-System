@@ -13,7 +13,7 @@
         <form action="{% url 'my_function' %}">
             <!--{% csrf_token %}-->
         <fieldset>
-          <legend>GET TEMPERATURE Prediction</legend>
+          <legend>GET TEMPERATURE HISTORY</legend>
         </fieldset>
         <div class="inner-form">
           <div class="input-field first-wrap">
@@ -24,8 +24,22 @@
             </div>
               <input id="search" type="search" name="city" placeholder="Which City are you looking for?"/>
           </div>
-          
-          
+          <div class="input-field second-wrap">
+            <div class="icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"></path>
+              </svg>
+            </div>
+              <input class="datepicker" id="depart" type="text" name="sdate" placeholder="29 Aug 2018"/>
+          </div>
+          <div class="input-field third-wrap">
+            <div class="icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"></path>
+              </svg>
+            </div>
+              <input class="datepicker" id="return" type="text" name="edate" placeholder="30 Aug 2018"/>
+          </div>
           <div class="input-field fifth-wrap">
             <button class="btn-search" type="submit" onclick="myFunction()">SEARCH</button>
           </div>
@@ -46,7 +60,6 @@
         searchEnabled: false,
         itemSelectText: '',
       });
-
     </script>
   </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
