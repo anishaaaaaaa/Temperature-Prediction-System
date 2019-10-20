@@ -58,7 +58,7 @@ def new_pg(request):
 @login_required(login_url="/login/")
 def new_pg(request):
     x = request.GET['city']
-    y = request.GET['city']
+    y = request.GET['country']
     countries = {}
     for country in pycountry.countries:
         countries[country.name] = country.alpha_2
