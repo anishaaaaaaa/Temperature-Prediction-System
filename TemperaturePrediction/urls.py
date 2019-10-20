@@ -20,6 +20,7 @@ from users import views as user_views
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
+    path('', user_views.login_user, name="login"),
     path('admin/', admin.site.urls),
     path('historicalTemp/', include('HistoricalTemp.urls')),
     path('predictedTemp/', include('PredictedTemp.urls')),
