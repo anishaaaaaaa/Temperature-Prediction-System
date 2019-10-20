@@ -5,7 +5,9 @@ from .models import Post, Category
 from .forms import CommentForm
 # Create your views here.
 
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url="/login/")
 def list_of_post_by_category(request,category_slug):
 	categories  = Category.objects.all()
 	post = Post.objects.filter(status = 'published')
@@ -17,19 +19,20 @@ def list_of_post_by_category(request,category_slug):
 	return render(request,template,context)
 
 
-
+@login_required(login_url="/login/")
 def list_of_post(request):
 	post = Post.objects.filter(status = 'published')
 	template = 'comment_app/post/list_of_post.html'
 	context = {'post':post}
 	return render(request,template,context)
-
+@login_required(login_url="/login/")
 def post_detail(request,slug):
 	post = get_object_or_404(Post,slug = slug)
 	template = 'comment_app/post/post_detail.html'
 	context = {'post':post}
 	return render(request,template, context)
 #--------------------------------------------------------------------------------------------------
+@login_required(login_url="/login/")
 def add_comment(request,slug):
 	post = get_object_or_404(Post,slug = slug)
 	if request.method == 'POST':

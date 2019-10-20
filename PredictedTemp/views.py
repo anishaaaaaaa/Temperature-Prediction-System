@@ -7,14 +7,15 @@ from pandas import read_csv
 from matplotlib import pyplot as pp
 import pycountry
 import dateutil.parser
+from pandas.io.json import json_normalize
 
+from django.contrib.auth.decorators import login_required
 
-
-# Create your views here.
+@login_required(login_url="/login/")
 def prediction(request):
     return render(request, 'index1.html')
 
-
+@login_required(login_url="/login/")
 def new_pg(request):
     x = request.GET['city']
     y = request.GET['city']
@@ -28,6 +29,7 @@ def new_pg(request):
     print(api_address)
     json_data = requests.get(api_address).json()
     li = json_data['list']
+    data = pd.DataFrame(columns=['date_time', 'Temperature'])
     for i in li:
         dt = i['dt_txt']
         date = dateutil.parser.parse(dt).date()
@@ -41,7 +43,18 @@ def new_pg(request):
         print("Description: ", desc)
         print()
         print()
-        #return render(request, 'plot1.html', {'data': json_data})
+        data = data.append({'date_time': dt, 'Temperature':temp}, ignore_index=True)
+
+    # print(json_data.keys)
+    # print((json_normalize(json_data)).columns)
+        print(data)
+        data.to_csv('file1.csv')
+        temp = data['Temperature']
+    date = data['date_time']
+    pp.plot(date, temp)
+    pp.xticks(date, date, rotation='vertical')
+    data = pp.show()
+    return render(request, 'plot1.html', {'data': json_data})
 
     '''
     loc = request.GET['city']
