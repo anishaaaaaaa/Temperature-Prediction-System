@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'users',
     'currentTemp',
     'HistoricalTemp',
+    'PredictedTemp',
     'crispy_forms',
     'comment_app',
     'django.contrib.admin',

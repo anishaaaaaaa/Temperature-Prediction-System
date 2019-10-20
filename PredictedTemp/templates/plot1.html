@@ -1,0 +1,31 @@
+{% extends "base1.html" %}
+{% block head %}
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{% endblock %}
+
+{% block content %}
+
+<div class="container text-center">
+    <br><br>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand text-center" href="#">TEMPERATURE PREDICTION</a>
+    </nav>
+
+
+    <div class="card" style="width: 100%;margin-top: 15px">
+
+        <div class="card-body">
+            <h5 class="card-title">PREDICTION DATA</h5>
+        </div>
+    </div>
+    <div class="card" style="width: 100%;margin-top: 15px">
+        <div class="card-body">
+            <p><b>City: {{ city }}<br>
+                Start Date: {{ startdate }}<br>
+                End Date: {{ enddate }}</b>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

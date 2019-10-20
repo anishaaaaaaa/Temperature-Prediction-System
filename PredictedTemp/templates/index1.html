@@ -1,0 +1,96 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500" rel="stylesheet" />
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <ul class="navbar-nav ml-auto">
+        <a class="navbar-brand" href="#">
+            <img src="https://cdn3.iconfinder.com/data/icons/picons-weather/57/07_sunny_hot-512.png"
+                 width="60" height="60"/>
+        </a>
+        <!--    <a class="navbar-brand" href="/shop">My Awesome Cart</a>-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </ul>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href=""><strong>HISTORICAL TEMPERATURE</strong> <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/currentTemp"><strong> | CURRENT TEMPERATURE </strong></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/comment_app"><strong> | COMMENT</strong> </a>
+            </li>
+
+
+        </ul>
+        <ul class="navbar-nav mr">
+          <li class="nav-item">
+                <a class="nav-link" href="/login"> <strong> LOGIN</strong></a>
+          </li>
+          <li class="nav-item">
+                <a class="nav-link" href="/register"><strong> | REGISTER</strong></a>
+          </li>
+        </ul>
+    </div>
+</nav>
+
+    <div class="s002">
+        <form action="{% url 'my_func' %}">
+            <!--{% csrf_token %}-->
+        <fieldset>
+          <legend style="color: black">GET TEMPERATURE PREDICTION</legend>
+        </fieldset>
+        <div class="inner-form">
+          <div class="input-field first-wrap">
+            <div class="icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path>
+              </svg>
+            </div>
+              <input id="search1" type="search" name="city" placeholder="Which City are you looking for?"/>
+          </div>
+            <div class="input-field second-wrap">
+            <div class="icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path>
+              </svg>
+            </div>
+              <input id="search2" type="search" name="country" placeholder="Which Country are you looking for?"/>
+          </div>
+          <div class="input-field fifth-wrap">
+            <button class="btn-search" type="submit" onclick="myFunction()">SEARCH</button>
+          </div>
+        </div>
+        <p id="demo"></p>
+      </form>
+    </div>
+    <script src="{% static 'js/extention/choices.js' %}"></script>
+    <script src="{% static 'js/extention/flatpickr.js' %}"></script>
+    <script>
+      flatpickr(".datepicker",
+      {});
+
+    </script>
+    <script>
+      const choices = new Choices('[data-trigger]',
+      {
+        searchEnabled: false,
+        itemSelectText: '',
+      });
+    </script>
+  </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
