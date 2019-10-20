@@ -33,8 +33,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'users',
     'currentTemp',
-
-    'HistoricalTemp',
     'PredictedTemp',
     'crispy_forms',
     'comment_app',
