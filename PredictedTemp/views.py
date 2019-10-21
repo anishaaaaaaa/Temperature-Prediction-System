@@ -59,6 +59,8 @@ def new_pg(request):
     data = pp.show()
     # pp.xticks(l1, l1, rotation='vertical')
     # data = pp.show()
+    if True:
+        return redirect('index1.html')
     return render(request, 'plot1.html',{'graph': data})
 
 '''

@@ -29,6 +29,7 @@ urlpatterns = [
     path('profile/',user_views.profile_user, name="profile"),
     path('login/', user_views.login_user, name="login"),
     url(r'^comment_app/', include('comment_app.urls')),
+    path('weather/', include('weather.urls')),
 
 ]
 if settings.DEBUG:

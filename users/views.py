@@ -37,7 +37,7 @@ def login_user(request):
         user = authenticate(request, username= username, password=password)
         if user:
             login(request, user)
-            return redirect('../currentTemp/')
+            return redirect('../weather/')
         else:
             context['error'] = "Porvide valide credentials"
             return render(request, "users/login.html", context)
