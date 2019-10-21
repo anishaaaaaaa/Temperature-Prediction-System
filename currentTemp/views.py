@@ -17,9 +17,9 @@ def index(request):
     cities = City.objects.all()
 
     weather_data = []
-
+    counter = 0
     for city in cities:
-
+        counter += 1
         r = requests.get(url.format(city)).json()
 
         city_weather = {
@@ -30,6 +30,8 @@ def index(request):
         }
 
         weather_data.append(city_weather)
+        # city.delete()
+        # print(counter)
 
     context = {'weather_data' : weather_data, 'form' : form}
     return render(request, 'weather/weather.html', context)

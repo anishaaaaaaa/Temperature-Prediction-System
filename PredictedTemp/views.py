@@ -32,6 +32,7 @@ def new_pg(request):
     #print(api_address)
     json_data = requests.get(api_address).json()
     li = json_data['list']
+    data = pd.DataFrame(columns=['date_time', 'Temperature'])
     for i in li:
         dt = i['dt_txt']
         date = dateutil.parser.parse(dt).date()
@@ -46,11 +47,18 @@ def new_pg(request):
         print("Description: ", desc)
         print()
         print()
-        l1.append(date)
-        l2.append(temp)
-    pp.plot(l1, l2)
-    pp.xticks(l1, l1, rotation='vertical')
+        # l1.append(date)
+        # l2.append(temp)
+        data = data.append({'date_time': date, 'Temperature':temp}, ignore_index=True)
+    # pp.plot(l1, l2)
+    temp = data['Temperature']
+    date = data['date_time']
+    pp.clf()
+    pp.plot(date, temp)
+    pp.xticks(date, date, rotation='vertical')
     data = pp.show()
+    # pp.xticks(l1, l1, rotation='vertical')
+    # data = pp.show()
     return render(request, 'plot1.html',{'graph': data})
 
 '''
